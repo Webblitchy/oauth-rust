@@ -5,24 +5,6 @@ use once_cell::sync::Lazy;
 use reqwest::StatusCode;
 use serde::{Deserialize, Serialize};
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-struct Creds {
-    #[serde(rename = "client_id")]
-    pub client_id: String,
-    #[serde(rename = "project_id")]
-    pub project_id: String,
-    #[serde(rename = "auth_uri")]
-    pub auth_uri: String,
-    #[serde(rename = "token_uri")]
-    pub token_uri: String,
-    #[serde(rename = "auth_provider_x509_cert_url")]
-    pub auth_provider_x509_cert_url: String,
-    #[serde(rename = "client_secret")]
-    pub client_secret: String,
-    #[serde(rename = "redirect_uris")]
-    pub redirect_uris: Vec<String>,
-}
-
 #[allow(dead_code)]
 /// Lazy is used to initialize a complex static variable as it is currently not supported in native Rust.
 /// The initialization is done only once when the variable is used for the first time.  
